@@ -16,7 +16,7 @@ const { Restaurant } = require('./models');
 const app = express();
 app.use(bodyParser.json());
 
-GET requests to /restaurants => return 10 restaurants
+//GET requests to /restaurants => return 10 restaurants
 app.get('/restaurants', (req, res) => {
   Restaurant
     .find()
@@ -82,7 +82,6 @@ app.post('/restaurants', (req, res) => {
       return res.status(400).send(message);
     }
   }
-
   Restaurant
     .create({
       name: req.body.name,
